@@ -1,0 +1,72 @@
+<div class="container-fluid room">
+    <div class="row" style="height: 100vh;">
+        <div class="row color2" style="border: 1px solid #fff3e0; height: 15%;">
+            <div class="title_logo">
+                <img
+                src="/images/rakus_logo.png"
+                alt="トップ画像"
+                style="max-width: 100%;"
+                />
+            </div>
+        </div>
+        <div class="row" style="height: 85%;">
+            <div class="col-md-2 room-user_list" id="room-user_list">
+                <div class="userlist color3">
+                    <a class="userlist">
+                        <span class="text">ユーザー</span>
+                        <span class="text">一覧</span>
+                    </a>
+                </div>
+                <div class="users color2" id="users"></div>
+                <input type="button" value="x" class="common-button room-close_users_button" onclick="close_users();">
+            </div>
+            <div class="room-md-userList_bg" id="room-md-userList_bg"></div>
+        
+            <div class="col-md-10 room-main color4" style="padding: 0%; margin: 0%; border: 1px solid #fff3e0; height: 100%;">
+                <form method="post" action="/" style="height: 100%; padding: 0%; margin: 0%;">
+                    <div class="row" style="height: 100%; padding: 0%; margin: 0%;">
+                        <div class="col-md-7 room-thread">
+                            <div id="thread" style="height: 100%;"></div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="rest">
+                                <input type="button" value="一時休止" class="common-button room-rest_button btn btn-primary card-text form-control" id="room-rest_button" onclick="rest();">
+                            </div>
+                            <div class="room-login_user">
+                                ログインユーザ：{{userName}}さん
+                                <input id="userName" type="hidden" value="{{userName}}">
+                            </div>
+                            <input type="button" value="ユーザー一覧" class="common-button room-open_users_button" onclick="open_users();">
+                            <div class="room-message">
+                                <textarea id="message" rows="4" class="room-message_textarea" placeholder="投稿文を入力してください"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="button" value="投稿" class="common-button room-publish_button btn btn-primary card-text form-control" id="room-publish_button" onclick="publish();">
+                                </div>
+                                <div class="col">
+                                    <input type="button" value="メモ" class="common-button room-memo_button btn btn-primary card-text form-control" id="room-memo_button" onclick="memo();">
+                                </div>
+                            </div>
+                            <div class="sort">
+                                <input type="button" value="古い順" class="common-button room-sort_button btn btn-primary card-text form-control" id="room-sort_button" onclick="sort();">
+                            </div>
+
+                            <div class="room-exit">
+                                <input type="button" value="退室する" class="common-button room-exit_button btn btn-primary card-text form-control" onclick="exit();">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/javascripts/socket.js"></script>
+<script src="/javascripts/enter.js"></script>
+<script src="/javascripts/publish.js"></script>
+<script src="/javascripts/memo.js"></script>
+<script src="/javascripts/exit.js"></script>
+<script src="/javascripts/room.js"></script>

@@ -1,0 +1,495 @@
+/*
+ * 画面全体に関する設定
+ */
+body {
+    font: 14px "Lucida Grande", Meiryo, Helvetica, Arial, sans-serif;
+}
+.container-fluid {
+    width: 100%;
+    /* background-color: #fff3e0; */
+    margin: 0;
+    padding: 0;
+}
+
+.color0 {
+    background-color: #fff;
+}
+.color1 {
+    background-color: #38090999;
+}
+.color2 {
+    background-color: #fff3e0;
+}
+.color3 {
+    background-color: #f39800;
+}
+.color4 {
+    background-color: #fae0b5;
+}
+
+a {
+    color: #00b7ff;
+}
+
+div {
+    margin: 0px 0px;
+}
+
+.row {
+    margin: 0;
+    width: 100%;
+    /* background-color: #fff; */
+}
+
+.col {
+    margin: 0%;
+    padding: 0%;
+}
+
+/*
+ * ボタンの共通設定
+ */
+.common-button {
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: #f39800;
+    border: 0% #fff;
+}
+
+/*
+ * トップ画面（index.hbs）に関する設定
+ */
+.index-user_name {
+}
+
+.index-user_name_text {
+    position: absolute;
+    top: 60%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 80%;
+    height: 3rem;
+}
+
+.index-enter {
+    position: absolute;
+    top: 80%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 80%;
+}
+
+.index-enter_button {
+    background-color: #f39800;
+    text-align: center;
+    height: 3rem;
+}
+
+.card-img-top {
+    position: absolute;
+    top: 15%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 90%;
+}
+
+.login {
+    background-color: #fcdca4;
+    border-radius: 1em;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    top: 10vh;
+    left: 25vw;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        height: 30vh;
+        width: 70vw;
+        position: absolute;
+        top: 20vh;
+        left: 15vw;
+        margin: auto;
+    }
+
+    .index-user_name_text {
+        position: absolute;
+        top: 15vh;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 80%;
+        height: 5vh;
+    }
+
+    .index-enter {
+        position: absolute;
+        top: 22vh;
+        right: 0;
+        left: 0;
+        margin: auto;
+        width: 80%;
+    }
+
+    .index-enter_button {
+        height: 5vh;
+    }
+}
+
+@media screen and (max-width: 960px) and (min-width: 601px) {
+    .index-user_name_text {
+        top: 25vh;
+        height: 8vh;
+    }
+    .index-enter_button {
+        height: 8vh;
+    }
+}
+
+/*
+ * チャットルーム画面（room.hbs）に関する設定
+ */
+.room {
+    height: 100vh;
+    z-index: 0;
+}
+.thread-message {
+    border-radius: 12px;
+}
+
+.self-memo.thread-message {
+    position: relative;
+    display: block;
+    margin: 2em 0 2em 40px;
+    padding: 10px;
+    min-width: 120px;
+    max-width: 60%;
+    color: #555;
+    font-size: 16px;
+    border: solid 1px #000;
+    background-color: ghostwhite;
+    box-sizing: border-box;
+}
+
+.self-message.thread-message {
+    position: relative;
+    display: block;
+    margin: 2em 0 2em 40px;
+    padding: 10px;
+    min-width: 120px;
+    max-width: 60%;
+    color: #555;
+    font-size: 16px;
+    background-color: gainsboro;
+    box-sizing: border-box;
+}
+
+.other-message.thread-message {
+    position: relative;
+    display: block;
+    margin: 2em 0 2em 40px;
+    padding: 10px;
+    min-width: 120px;
+    max-width: 60%;
+    color: #555;
+    font-size: 16px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.self-message.thread-message:before {
+    content: "";
+    position: absolute;
+    left: -38px;
+    width: 12px;
+    height: 12px;
+    bottom: 0;
+    background: gainsboro;
+    border-radius: 50%;
+    z-index: 2;
+}
+.other-message.thread-message:before {
+    content: "";
+    position: absolute;
+    left: -38px;
+    width: 12px;
+    height: 12px;
+    bottom: 0;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 2;
+}
+.self-memo.thread-message:before {
+    content: "";
+    position: absolute;
+    left: -38px;
+    width: 12px;
+    height: 12px;
+    bottom: 0;
+    background: ghostwhite;
+    border: solid 1px #000;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.self-memo.thread-message:after {
+    content: "";
+    position: absolute;
+    left: -22px;
+    width: 17px;
+    height: 15px;
+    bottom: 3px;
+    background: ghostwhite;
+    border: solid 1px #000;
+    border-radius: 50%;
+}
+.self-message.thread-message:after {
+    content: "";
+    position: absolute;
+    left: -22px;
+    width: 17px;
+    height: 15px;
+    bottom: 3px;
+    background: gainsboro;
+    border-radius: 50%;
+}
+.other-message.thread-message:after {
+    content: "";
+    position: absolute;
+    left: -22px;
+    width: 17px;
+    height: 15px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+}
+@media screen and (768px < width < 1200px) {
+    .thread-message {
+        border-radius: 8px;
+    }
+}
+@media screen and (width < 768px) {
+    .thread-message {
+        border-radius: 9px;
+    }
+}
+.thread-message p {
+    word-break: break-all;
+    margin: 0;
+    padding: 0;
+    font-size: 1vw;
+}
+
+.title_logo {
+    margin: auto 2%;
+}
+
+.room-open_users_button {
+    display: none;
+}
+
+.room-user_list {
+    padding: 0%;
+    margin: 0%;
+    border: 1px solid #fff3e0;
+    height: 100%;
+}
+
+.login-users {
+    vertical-align: top;
+    padding: 0;
+    margin: 0;
+}
+.room-login_user {
+    display: inline-block;
+}
+.userlist {
+    margin: 0;
+    padding: 10px;
+    color: #fff3e0;
+    text-align: center;
+}
+.userlist a {
+    font-weight: 900;
+}
+.text {
+    display: inline-block;
+    font-size: 1.3vw;
+}
+.users {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    overflow-y: auto;
+    height: 100vh;
+    text-decoration: underline;
+    text-decoration-color: #f39800;
+    text-decoration-thickness: 2px;
+    height: 90%;
+}
+
+.username {
+    margin: 0;
+    padding: 10px;
+    color: #000;
+}
+
+.room-md-userList_bg {
+    display: none;
+}
+
+.room-close_users_button {
+    display: none;
+}
+
+.main {
+    vertical-align: top;
+    overflow-y: auto;
+    padding: 0%;
+    margin: 0%;
+    /*height: 100vh;
+    width: 100vh; */
+}
+
+.room-message {
+}
+
+.room-message_textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.room-submit {
+}
+
+.room-publish_button {
+}
+
+.room-memo_button {
+}
+
+.room-thread {
+    height: 100%;
+    overflow-y: auto;
+    padding: 3%;
+    margin: 0%;
+}
+
+.room-exit {
+}
+
+.room-exit_button {
+}
+
+.col-md-7 {
+    padding: 0%;
+    margin: 0%;
+    border: 1px solid #fff3e0;
+    height: 100%;
+}
+
+.col-md-5 {
+    padding: 1%;
+    margin: 0%;
+    border: 1px solid #fff3e0;
+    height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .col-md-5 {
+        padding: 1%;
+        margin: 0%;
+        border: 1px solid #fff3e0;
+        height: 100%;
+    }
+
+    .room-message {
+        padding: 2% 0%;
+        height: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .room-thread {
+        border: 1px solid #fff3e0;
+        height: 65%;
+    }
+
+    .col-md-5 {
+        padding: 1%;
+        margin: 0%;
+        border: 1px solid #fff3e0;
+        height: 35%;
+    }
+
+    .room-message {
+        height: auto;
+    }
+
+    .room-user_list {
+        visibility: hidden;
+        position: absolute;
+        z-index: 2;
+        margin: 20% 25%;
+        height: 60%;
+        width: 50%;
+    }
+
+    .room-md-userList_bg {
+        visibility: hidden;
+        z-index: 1;
+        display: block;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .room-open_users_button {
+        display: inline-block;
+        width: fit-content;
+        margin-left: 5% 5% 5% auto;
+        padding: 2%;
+    }
+
+    .room-close_users_button {
+        display: inline-block;
+        z-index: 3;
+        position: absolute;
+        background-color: #f39800;
+        border: 1px solid #fff;
+        font-weight: bold;
+        width: fit-content;
+        padding: 1% 2%;
+        right: 0%;
+        top: 0%;
+    }
+
+    .md-visible {
+        visibility: visible;
+    }
+
+    .md-hidden {
+        visibility: hidden;
+    }
+
+    .room-main {
+        width: 100vw;
+    }
+}
